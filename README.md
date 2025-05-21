@@ -66,3 +66,54 @@ adk web
 Try the following inputs : 
 * `What time is it in New York?`
 * `Is it raining in New York?`
+
+
+## Deploy to Agent Engine
+
+```python
+from multi_tool_agent.agent import root_agent
+import vertexai
+from vertexai import agent_engines
+from vertexai.preview.reasoning_engines import AdkApp
+
+vertexai.init(
+    project="YOUR_PROJECT_ID",
+    location="LOCATION",
+    staging_bucket=f"gs://BUCKET_NAME",
+)
+
+app = AdkApp(
+    agent=root_agent,
+    enable_tracing=True,
+)
+
+remote_app = agent_engines.create(
+    app,
+    display_name="Weather & Time Agent",
+    description="A basic multi-tool agent",
+    requirements=[
+        "google-adk (>=0.5.0,<1.0.0)",
+        "google-cloud-aiplatform[adk,agent_engines] (>=1.88.0,<1.90.0)",
+        "google-genai (>=1.5.0,<2.0.0)",
+        "pydantic (>=2.10.6,<3.0.0)",
+        "cloudpickle (>=3.1.1)",
+    ],
+    extra_packages=[
+        "./multi_tool_agent",  # The main package
+    ],
+)
+```
+
+Test the remote agent :
+```python
+# remote_app = agent_engines.get('RESSOURCE_ID')
+remote_session = remote_app.create_session(user_id='u_123')
+remote_session
+
+for event in remote_app.stream_query(
+    user_id="u_123",
+    session_id=remote_session["id"],
+    message="whats the weather in new york",
+):
+    print(event)
+```

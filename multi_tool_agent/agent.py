@@ -11,7 +11,15 @@ def get_weather(city: str) -> dict:
     Returns:
         dict: status and result or error msg.
     """
-    if city.lower() == "new york":
+    if "sf" in city.lower() or "san francisco" in city.lower():
+        return {
+            "status": "success",
+            "report": (
+                "The weather in San Francisco is foggy with a temperature of 15.5 degrees"
+                " Celsius (60 degrees Fahrenheit)."
+            ),
+        }
+    elif "ny" in city.lower() or city.lower() == "new york":
         return {
             "status": "success",
             "report": (
@@ -36,7 +44,9 @@ def get_current_time(city: str) -> dict:
         dict: status and result or error msg.
     """
 
-    if city.lower() == "new york":
+    if "sf" in city.lower() or "san francisco" in city.lower():
+        tz_identifier = "America/Los_Angeles"
+    elif "ny" in city.lower() or city.lower() == "new york":
         tz_identifier = "America/New_York"
     else:
         return {
