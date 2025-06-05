@@ -1,20 +1,20 @@
 [project]
 name = "multi-tool-agent"
-version = "0.2.0"
+version = "0.3.0"
 description = "This project provides a basic template and example to help you get started with building and deploying your own AI agents using Agent Development Kit (ADK)."
 authors = [ {name = "Baptiste PIRAULT"},]
 readme = "README.md"
 requires-python = ">=3.11"
 
 [tool.poetry.dependencies]
-google-adk = { version = "^0.5.0" }
+google-adk = { version = "^1.2.0" }
 google-cloud-aiplatform = { extras = [
     "adk",
     "agent-engines",
-], version = "^1.88.0" }
+], version = "^1.96.0" }
 
 [tool.poetry.group.dev.dependencies]
-google-adk = { version = "^0.5.0", extras = ["eval"] }
+google-adk = { version = "^1.2.0", extras = ["eval"] }
 
 [build-system]
 requires = ["poetry-core"]
