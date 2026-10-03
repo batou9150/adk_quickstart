@@ -31,4 +31,4 @@ def test_agent_answers_with_tool() -> None:
         if event.is_final_response() and event.content
         for part in event.content.parts or []
     )
-    assert "19" in final_text, f"Expected the canned forecast, got {final_text!r}"
+    assert "°C" in final_text, f"Expected a temperature, got {final_text!r}"

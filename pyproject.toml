@@ -5,6 +5,7 @@ description = "ADK quickstart: a weather and time agent on Gemini."
 requires-python = ">=3.11,<3.14"
 dependencies = [
     "google-adk>=2.7.0,<2.9.0",
+    "httpx>=0.28.0",
     "python-dotenv>=1.0.0",
 ]
 
@@ -57,3 +58,4 @@ packages = ["weather_time_agent"]
 [tool.pytest.ini_options]
 pythonpath = "."
 asyncio_default_fixture_loop_scope = "session"
+asyncio_mode = "auto"
