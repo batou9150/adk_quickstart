@@ -1,0 +1,51 @@
+{
+  "eval_cases": [
+    {
+      "eval_case_id": "greeting",
+      "prompt": {
+        "role": "user",
+        "parts": [{"text": "Hello, what can you help me with?"}]
+      }
+    },
+    {
+      "eval_case_id": "weather_known_city",
+      "prompt": {
+        "role": "user",
+        "parts": [{"text": "What's the weather like in London?"}]
+      },
+      "reference": {
+        "response": {
+          "role": "model",
+          "parts": [{"text": "It's overcast with light rain in London, 14 °C (57 °F)."}]
+        }
+      }
+    },
+    {
+      "eval_case_id": "weather_unknown_city",
+      "prompt": {
+        "role": "user",
+        "parts": [{"text": "What's the weather like in San Francisco?"}]
+      },
+      "reference": {
+        "response": {
+          "role": "model",
+          "parts": [{"text": "No weather information available for 'San Francisco'. Known cities: Berlin, London, Madrid, New York, Paris, Tokyo."}]
+        }
+      }
+    },
+    {
+      "eval_case_id": "time_and_weather",
+      "prompt": {
+        "role": "user",
+        "parts": [{"text": "What time is it in Tokyo, and should I bring an umbrella?"}]
+      }
+    },
+    {
+      "eval_case_id": "missing_city",
+      "prompt": {
+        "role": "user",
+        "parts": [{"text": "What's the weather?"}]
+      }
+    }
+  ]
+}
