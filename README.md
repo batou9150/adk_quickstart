@@ -86,3 +86,7 @@ API key and is free for non-commercial use (up to 10,000 calls a day).
 
 `agents-cli scaffold enhance` adds a deployment target (Agent Runtime, Cloud
 Run, GKE), a FastAPI server with A2A, Terraform and CI/CD.
+
+## License
+
+License: MIT — see [LICENSE](LICENSE).

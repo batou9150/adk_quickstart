@@ -2,6 +2,7 @@
 name = "adk-quickstart"
 version = "0.1.0"
 description = "ADK quickstart: a weather and time agent on Gemini."
+license = "MIT"
 requires-python = ">=3.11,<3.14"
 dependencies = [
     "google-adk>=2.7.0,<2.9.0",
