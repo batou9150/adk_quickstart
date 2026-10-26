@@ -5,7 +5,7 @@ description = "ADK quickstart: a weather and time agent on Gemini."
 license = "MIT"
 requires-python = ">=3.11,<3.14"
 dependencies = [
-    "google-adk>=2.7.0,<2.9.0",
+    "google-adk>=2.13.0,<2.14.0",
     "httpx>=0.28.0",
     "python-dotenv>=1.0.0",
 ]
@@ -18,8 +18,8 @@ dev = [
 
 [project.optional-dependencies]
 eval = [
-    "google-adk[eval]>=2.7.0,<2.9.0",
-    "google-cloud-aiplatform[evaluation]>=1.156.0,<2.0.0",
+    "google-adk[eval]>=2.13.0,<2.14.0",
+    "google-cloud-aiplatform[evaluation]>=2.2.0,<3.0.0",
 ]
 lint = [
     "ruff>=0.4.6,<1.0.0",
