@@ -48,6 +48,7 @@ possibly-missing-attribute = "ignore"
 
 [tool.codespell]
 skip = "uv.lock,.venv"
+ignore-words-list = "rime"  # WMO weather code 48, "depositing rime fog"
 
 [build-system]
 requires = ["hatchling"]
