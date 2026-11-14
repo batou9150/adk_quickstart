@@ -66,7 +66,7 @@ API key and is free for non-commercial use (up to 10,000 calls a day).
 
 | Variable | Default | Purpose |
 |---|---|---|
-| `GOOGLE_GENAI_USE_VERTEXAI` | `true` | Use Vertex AI (ADC) instead of AI Studio |
+| `GOOGLE_GENAI_USE_ENTERPRISE` | `true` | Use Vertex AI (ADC) instead of AI Studio |
 | `GOOGLE_CLOUD_PROJECT` | — | GCP project for Vertex AI |
 | `GOOGLE_CLOUD_LOCATION` | `global` | Vertex AI location |
 | `GEMINI_API_KEY` | — | AI Studio key, instead of the three above |
